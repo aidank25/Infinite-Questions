@@ -9,15 +9,13 @@ import requests
 import json
 # Add the lib folder to the Python path
 
-
-
-
 # Load environment variables from .env file
 #load_dotenv()
 
+
 # API Endpoint and API Key
 API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
-API_KEY="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" #API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
+API_KEY="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" #API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
 
 # Define functions for arithmetic operations
 def request_word():
