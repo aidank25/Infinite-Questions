@@ -16,7 +16,7 @@ import json
 # API Endpoint and API Key
 API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 API_KEY="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" #API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
-
+theWord = "gift"
 # Define functions for arithmetic operations
 def request_word():
     return "zebra"
@@ -30,7 +30,16 @@ def ask_yes_no_question(question, model="llama3-8b-8192"):
 
     payload = {
         "model": model,
-        "messages": [{"role": "user", "content": question}],
+         "messages":[
+        {
+            "role": "system",
+            "content": "The word is {theWord}. If the user guesses the word, tell them \"You did it!\", otherwise, only answer yes, no, or unsure. The user is only allowed to ask yes or no questions, if they ask the wrong type of question, remind them that they are only allowed to ask yes or no questions. "
+        },
+        {
+            "role": "user",
+            "content": {question}
+        }
+    ],
         "functions": [],
         "function_call": "auto",
     }
