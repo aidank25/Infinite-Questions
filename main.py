@@ -1,7 +1,36 @@
 from app.groq_calls import ask_yes_no_question, request_word
+from app.auth import register_user, authenticate_user
+
+def auth_menu():
+    while True:
+        print("\n1. Login\n2. Register\n3. Exit")
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            username = input("Username: ")
+            password = input("Password: ")
+            user_id = authenticate_user(username, password)
+            if user_id:
+                print("Login successful!")
+                return user_id
+            print("Invalid credentials!")
+            
+        elif choice == "2":
+            username = input("Choose username: ")
+            password = input("Choose password: ")
+            if register_user(username, password):
+                print("Registration successful! Please login.")
+            else:
+                print("Username already exists!")
+                
+        elif choice == "3":
+            exit()
 
 # Main console application
-def console_chat():
+
+user_id = auth_menu()
+# game loop
+def console_chat(user_id):
     # game start
     the_word = request_word()
     print("I'm thinking of a word. Can you guess it? \n"+
@@ -42,4 +71,5 @@ def console_chat():
             print("No function call was made or an error occurred.")
 
 if __name__ == "__main__":
-    console_chat()
+    user_id = auth_menu()
+    console_chat(user_id)
