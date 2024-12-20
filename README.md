@@ -16,3 +16,5 @@ commands:
   - if the use types in anything other than a yes or no question they will be reminded the rules of the game
 
 
+# video
+[video](questionsvideo.mkv)
