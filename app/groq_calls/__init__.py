@@ -43,7 +43,9 @@ def request_word():
             "content": "Give me a random word, just the word"
         }])
 
+# function to ask a yes or no question
 def ask_yes_no_question(question, the_word):
+    # if a proper yes or no question is asked, the system will respond with only yes, no, or unsure
     return ask_groq([
         {
             "role": "system",
