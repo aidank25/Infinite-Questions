@@ -1,22 +1,17 @@
-import sys
 import os
-
-# Add the lib folder to the Python path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
-
-#from dot_env import load_dotenv # type: ignore
+from dotenv import load_dotenv
 import requests
 # Add the lib folder to the Python path
 
 # Load environment variables from .env file
-#load_dotenv()
+load_dotenv()
 
 
 # API Endpoint and API Key
 API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
-API_KEY="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" #API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
+API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
 
-# Function to call the Groq API and expect a yes or no response
+# Function to call the Groq API
 def ask_groq(messages, model="llama-3.1-70b-versatile"):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
@@ -41,6 +36,7 @@ def ask_groq(messages, model="llama-3.1-70b-versatile"):
         print(f"An error occurred: {e}")
         return "error"
 
+# function to request a single random word
 def request_word():
     return ask_groq([{
             "role": "user",
