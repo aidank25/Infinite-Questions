@@ -1,2 +1,7 @@
-venv
+venv/
 .env
+__pycache__/
+*.pyc
+.coverage
+.pytest_cache/
+htmlcov/
