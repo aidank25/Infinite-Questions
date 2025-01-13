@@ -1,4 +1,4 @@
-# 218final
+# Infinite Questions
 
 ## This is a 20 questions sort of game except you get infinite questions because why not.
 The app will query the language model to pick a random word and your goal is to guess the word with only yes or no questions  
@@ -16,5 +16,5 @@ commands:
   - if the use types in anything other than a yes or no question they will be reminded the rules of the game
 
 
-# video
+# video demonstration
 [video](https://youtu.be/2pAEoTAh6rI)
