@@ -11,7 +11,7 @@ commands:
   - `yes` picks a new word and continues the game
   - `no` exits the game
 - `new word`: picks a new random word
-- [any yes or no question]: asks the language model a yes or no question about the word
+- `[any yes or no question]`: asks the language model a yes or no question about the word
   - the language model will respond with `yes`, `no`, or `unsure`
   - if the use types in anything other than a yes or no question they will be reminded the rules of the game
 
