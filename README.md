@@ -1,7 +1,7 @@
 # Infinite Questions
 
-## This is a 20 questions sort of game except you get infinite questions because why not.
-The app will query the language model to pick a random word and your goal is to guess the word with only yes or no questions  
+## This is a 20 questions sort of game except you get infinite questions.
+The app will query a language model using Groq to pick a random word and your goal is to guess the word with only yes or no questions  
   
 to run: `python3 main.py` 
 
